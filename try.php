@@ -30,9 +30,9 @@
 	if(isset($_POST['submit'])){
 
 
-	$servername = "localhost";
+	$servername = "198.168.1.73";
 	$username = "griffish";
-	$password = "VYSuSPc6VRy6Dtqc";
+	$password = "password";
 	$dbname = "myApp";
 
 	//make connection to database

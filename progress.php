@@ -25,9 +25,9 @@
 	if(isset($_POST['submit'])){
 
 
-	$servername = "localhost";
+	$servername = "192.168.1.73";
 	$username = "griffish";
-	$password = "VYSuSPc6VRy6Dtqc";
+	$password = "password";
 	$dbname = "myApp";
 
 	//make connection to database
@@ -44,7 +44,6 @@
 		while($row=mysqli_fetch_assoc($result)){
 			echo "weight lifted: ".$row["weight"]." //Number of reps: ".$row["reps"]. "//date performed: ".$row["date"]. "<br>";
 		}
-		
 	}
 	else{ echo 'no results';}
 
