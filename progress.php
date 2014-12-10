@@ -1,14 +1,13 @@
-<!DOCTYPE HTML>
+<!DOCTYPE>
 <html>
- <head>
-  <title>addWork</title>
-  </head>
- 
- <body>
- 
- 
-  <form action="index.html" method="post">
-   <label for="workout">what workout did you hit</label>
+<head>
+
+<title>Progress</title>
+</head>
+
+<body>
+<form action="progress.php" method="post">
+   <label for="workout">what workout do you wanna see progress of?</label>
    <select name="workout" id="workout">
    	<option value=""></option>
     <option value="benchpress">bench</option>
@@ -17,16 +16,12 @@
     <option value="overheadPress">overhead press</option>
     <option value="bentOverRow">bent over row</option>
    </select>
-   Reps: <input type="text" name="reps"><br>
-   Weight: <input type="text" name="lbs"><br>
-   <label for="date">date input:</label>
-    <input type="date" name="date" id="date" value="" />
-   <input type="submit" name="submit" value="enter workout">
-  </form>
+   <input type="submit" name="submit" value="see progress">
+</form>
   
 <a href="#" class="ui-btn" data-rel="back">Go Back</a>
 
-	<?php 
+<?php 
 	if(isset($_POST['submit'])){
 
 
@@ -42,13 +37,19 @@
 		die("connection failed: ".mysqli_connect_error());
 	}
 	//insert into the database
-	$sql="INSERT INTO $_POST[workout](reps, weight, date) VALUES('$_POST[reps]', '$_POST[lbs]', '$_POST[date]')";
-
-
-	mysqli_query($conn, $sql);
+	$sql="SELECT weight, reps, date FROM $_POST[workout]";
+	$result=mysqli_query($conn, $sql);
+	
+	if(mysqli_num_rows($result)>0){
+		while($row=mysqli_fetch_assoc($result)){
+			echo "weight lifted: ".$row["weight"]." //Number of reps: ".$row["reps"]. "//date performed: ".$row["date"]. "<br>";
+		}
+		
+	}
+	else{ echo 'no results';}
 
 	mysqli_close($conn);
 	}//end if
 	?>
- </body>
+</body>
 </html>
