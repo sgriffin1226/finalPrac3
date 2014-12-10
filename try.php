@@ -31,7 +31,7 @@
 
 
 	$servername = "198.168.1.73";
-	$username = "griffish";
+	$username = "root";
 	$password = "password";
 	$dbname = "myApp";
 
