@@ -27,7 +27,7 @@
 
 	$servername = "192.168.1.73";
 	$username = "root";
-	$password = "password";
+	$password = "";
 	$dbname = "myApp";
 
 	//make connection to database

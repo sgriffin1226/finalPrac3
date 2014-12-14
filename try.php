@@ -7,7 +7,7 @@
  <body>
  
  
-  <form action="index.html" method="post">
+  <form action="try.php" method="post">
    <label for="workout">what workout did you hit</label>
    <select name="workout" id="workout">
    	<option value=""></option>
@@ -30,9 +30,9 @@
 	if(isset($_POST['submit'])){
 
 
-	$servername = "198.168.1.73";
+	$servername = "192.168.1.73";
 	$username = "root";
-	$password = "password";
+	$password = "";
 	$dbname = "myApp";
 
 	//make connection to database

@@ -16,9 +16,9 @@
 
 <?php
 	if(isset($_POST['submit'])){
-	$servername = "192.168.1.73";
+	$servername = "198.162.1.73";
 	$username = "root";
-	$password = "VYSuSPc6VRy6Dtqc";
+	$password = "";
 	$dbname = "myApp";
 
 	//make connection to database
