@@ -39,10 +39,11 @@
 	//insert into the database
 	$sql="SELECT weight, reps, date FROM $_POST[workout]";
 	$result=mysqli_query($conn, $sql);
+	$num_rows=mysqli_num_rows($result);
 	
-	if(mysqli_num_rows($result)>0){
+	if($num_rows>0){
 		while($row=mysqli_fetch_assoc($result)){
-			echo "weight lifted: ".$row["weight"]." //Number of reps: ".$row["reps"]. "//date performed: ".$row["date"]. "<br>";
+			echo "weight lifted: ", $row["weight"], " //Number of reps: ", $row["reps"],  "//date performed: ", $row["date"], "<br>";
 		}
 	}
 	else{ echo 'no results';}
