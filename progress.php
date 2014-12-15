@@ -25,9 +25,9 @@
 	if(isset($_POST['submit'])){
 
 
-	$servername = "192.168.1.73";
-	$username = "randUser";
-	$password = "M85x35pbXCy3TGTP";
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
 	$dbname = "myApp";
 
 	//make connection to database

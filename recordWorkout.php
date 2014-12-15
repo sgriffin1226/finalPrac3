@@ -1,3 +1,6 @@
+<!--records a new workout with weight, reps, and date-->
+
+
 <!DOCTYPE HTML>
 <html>
  <head>
@@ -7,7 +10,7 @@
  <body>
  
  
-  <form action="try.php" method="post">
+  <form action="recordWorkout.php" method="post">
    <label for="workout">what workout did you hit</label>
    <select name="workout" id="workout">
    	<option value=""></option>
@@ -30,9 +33,9 @@
 	if(isset($_POST['submit'])){
 
 
-	$servername = "192.168.1.73";
-	$username = "randUser";
-	$password = "M85x35pbXCy3TGTP";
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
 	$dbname = "myApp";
 
 	//make connection to database
@@ -45,7 +48,9 @@
 	$sql="INSERT INTO $_POST[workout](reps, weight, date) VALUES('$_POST[reps]', '$_POST[lbs]', '$_POST[date]')";
 
 
-	mysqli_query($conn, $sql);
+	if(mysqli_query($conn, $sql)){
+		echo "add successful!";
+	}
 
 	mysqli_close($conn);
 	}//end if
